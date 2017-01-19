@@ -1,0 +1,22 @@
+<ons-page ng-controller="SubController15">
+  <div style="text-align:center; margin-top:50px;">
+    <div id="now-in-login" ng-if="nowInLogin">
+      ログインしています・・・
+    </div>
+    <div id="needs-login" ng-if="!loginCompleted && !nowInLogin">
+      <div>
+        ログインが必要です。
+      </div>
+      <br />
+      <ons-button
+        modifier="outline"
+        style="margin-right: 20px;"
+        ng-click="loginByGoogle();">
+        Google アカウントでログイン
+      </ons-button>
+      <div id="now-in-login" ng-if="loginCompleted">
+        ログイン完了
+      </div>
+    </div>
+  </div>
+</ons-page>

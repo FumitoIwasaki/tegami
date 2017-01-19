@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common_function.js"></script>
+  <script src="js/AppPotHelper.js"></script>
+  <script src="js/Authenticator.js"></script>
+　<script src="js/LocalDBInitializer.js"></script>
+  <script src="js/GPSDSTS.js"></script>
+  <script src="js/SettingsService.js"></script>
+  <script src="js/FujitecSSOService.js"></script>
+  <script src="js/page-login.js"></script>
+  <script src="js/page-menu.js"></script>
+  <script src="js/page-breakdown.js"></script>
+  <script src="js/page-sagyolist.js"></script>
+  <script src="js/page-sagyo.js"></script>
+  <script src="js/page-groupinput.js"></script>
+  <script src="js/page-mentestart.js"></script>
+  <script src="js/page-disevinput.js"></script>
+  <script src="js/page-disescinput.js"></script>
+  <script src="js/page-disrepev.js"></script>
+  <script src="js/page-disrepevdetail.js"></script>
+  <script src="js/page-disrepesc.js"></script>
+  <script src="js/page-disrepescdetail.js"></script>
+  <script src="js/page-status.js"></script>
+  <script src="js/page-main_search.js"></script>
+  <script src="js/page-main_search_list.js"></script>
+  <script src="js/page-main_search_detail.js"></script>
+  <script src="js/page-pick1.js"></script>
+  <script src="js/page-pick2.js"></script>
+
+  
+  
+  <script>
+    groupdata="";
+    dontUseAppPot=false;
+    
+    //ユーザ情報
+    my_dept_code="";
+    my_dept_code_j="";
+    my_mail_c="";  
+    my_tensyo_cd="";
+    my_tensyo_name="";
+    my_keijyo_tensyo_cd=""; 
+    my_area_c=""; 
+    my_hanbetu=""; 
+    
+    //メイン情報検索項目用グローバル変数
+    main_pronect_no="";
+    main_tkoban="";
+    
+    //iwf追加
+    main_package_no="";
+    
+
+// *****************************************************************************
+//  local database 関連処理
+// *****************************************************************************
+  function localdatabase() {
+    var item = localStorage.getItem("disGROUP");
+    var obj = JSON.parse(item);
+    ons.notification.alert({ message: obj.name })
+  }
+  function Dellocaldatabase() {
+    localStorage.removeItem("disGROUP");
+  }
+  function Dellocalstatus() {
+    localStorage.removeItem("selectSTATUS");
+  }
+  function setLoginUser() {
+    localStorage.setItem("loginUserId","9999");
+  }
+  function dispLoginUser() {
+    var item = localStorage.getItem("loginUserId");
+    ons.notification.alert({ message: item });
+  }
+  function delLoginUser() {
+    localStorage.removeItem("loginUserId");
+  }
+  </script>
+</head>
+
+
+<body>    
+  <ons-modal var="loadingModal">
+    <div id="loadSpinner">
+    </div>
+  </ons-modal>
+
+  <ons-navigator page="login.html" var="app.navi"></ons-navigator>
+    
+</body>
+</html>

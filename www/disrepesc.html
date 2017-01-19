@@ -1,0 +1,68 @@
+<style type="text/css">
+.button--black {
+    width: 80%;
+}
+</style>
+<ons-page ng-controller="SubController10">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      広域災害状況報告:ESC
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div class="kisai">状態を選択して下さい<br /></div>
+  <br />
+
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('01')">非停止(正常運転)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('02')">完全復旧(被害なし)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog2('03')">完全復旧(被害あり)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog2('11')">応急復旧</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog2('21')">未復旧(機器破損)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('22')">未復旧(停電)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('23')">未復旧(建物閉鎖)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('24')">未復旧(地域閉鎖)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('31')">建物損壊</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('41')">状態不明(建物閉鎖)</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog1('42')">状態不明(地域閉鎖)</ons-button>
+  </div>
+
+</ons-page>

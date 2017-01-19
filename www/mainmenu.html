@@ -1,0 +1,114 @@
+<ons-page ng-controller="MainController">
+  <ons-toolbar fixed-style  style="background-color:#efefef">
+
+    <div class="center">
+        Pick & Ship
+    </div>
+     <!-- 
+    <div class="left">
+      <div class="toolbar-namebox">
+      {{targetDate.getFullYear()}} 年 {{targetDate.getMonth()+1}} 月 {{targetDate.getDate()}} 日
+        <br />
+        {{kojinc}}:{{simei}}
+        <br />
+        {{my_dept_code}}:{{my_dept_code_j}}
+        <br />
+        {{my_tensyo_cd}}:{{my_tensyo_name}} 
+      </div>
+    </div>  
+    -->
+
+  </ons-toolbar>
+  
+    <!-- 
+   <ons-toolbar>
+   
+       <div class="center" style="background-image:url('images/mainmenu.png')"></div>
+
+
+    <div class="center" style="background-image:url('http://cdn.sstatic.net/ja/img/sprites.png?v=b55eefad6ab0')"></div>
+
+   
+   
+   <div class="right">
+      <ons-toolbar-button>
+        <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em">
+      </ons-toolbar-button>
+    </div>
+   
+    
+  </ons-toolbar>
+   -->   
+  <!--
+  <ons-toolbar fixed-style  style="background-color:#efefef">
+    <div class="center"><img src="images/mainmenu.png"></div>
+  </ons-toolbar>
+  -->
+  
+  <ons-scroller id="view-monthly-scroller">
+    <ons-list>
+      <ons-list-item modifier="chevron" ng-click="app.navi.pushPage('Pick1.html', { animation : 'slide' } )">
+        PICK
+      </ons-list-item>      
+      <ons-list-item modifier="chevron" ng-click="app.navi.pushPage('Depo1.html', { animation : 'slide' } )">
+        DEPO
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="app.navi.pushPage('Ship1.html', { animation : 'slide' } )">
+        SHIP
+      </ons-list-item>      
+      <ons-list-item modifier="chevron" ng-click="app.navi.pushPage('Main_Search.html', { animation : 'slide' } )">
+        確認用検索
+      </ons-list-item>    
+      
+      <!--
+      <ons-list-item modifier="chevron" ng-click="GPSlocationsearch()">
+        GPS位置検索
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="app.navi.pushPage('sagyolist.html', { animation : 'slide' } )">
+        作業時間報告
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="app.navi.pushPage('breakdown.html', { animation : 'slide' } )">
+        故障連絡一覧
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="Disaster()">
+        広域災害状況報告
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="app.navi.pushPage('status.html', { animation : 'slide' } )">
+        ステータス設定
+      </ons-list-item>
+      -->
+      <ons-list-item modifier="chevron" onclick="app.navi.pushPage('version.html', { animation : 'slide' } )">
+        バージョン表示
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron" ng-click="logout()">
+        ログアウト
+      </ons-list-item>
+    </ons-list>
+<!--
+    <div style="background-color:#c0c0c0">↓↓テスト↓↓</div>
+    <ons-list>
+      <ons-list-item modifier="chevron" onclick="localdatabase()">
+        Disp local database
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="Dellocaldatabase()">
+        Del local database(GROUP)
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="Dellocalstatus()">
+        Del local database(STATUS)
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="setLoginUser()">
+        Set Login User(9999)
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="dispLoginUser()">
+        Disp Login User
+      </ons-list-item>
+      <ons-list-item modifier="chevron" onclick="delLoginUser()">
+        Del Login User
+      </ons-list-item>
+    </ons-list>
+// -->
+  </ons-scroller>
+
+
+</ons-page>

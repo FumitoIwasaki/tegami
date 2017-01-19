@@ -1,0 +1,91 @@
+<style type="text/css">
+.col {
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+  padding: 4px;
+  color: #999;
+  font-size: 14px;
+}
+.page__content {
+  background-color: #f6f6f6;
+  padding: 8px;
+}
+</style>
+<ons-page ng-controller="SubController2">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      作業時間報告
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div id="view-monthly-header">
+    <div style="font-size:8pt; margin-top:4px;">
+      {{targetDate.getFullYear()}} 年 {{targetDate.getMonth()+1}} 月 {{targetDate.getDate()}} 日
+    </div>
+  </div>
+
+  <div class="kisai">時間を登録する項目を選択して下さい。<br /></div>
+  <br />
+  <div class="genba">{{targetKoban}}({{targetOiban}}) : {{targetGroupno}}<br /></div>)
+  <div class="genba">{{targetGenbamei}}<br /></div>
+  <br />
+  <div style="width:100%;">
+    <ons-row>
+      <ons-col width="170px" style="text-align:center; font-size:8pt;">
+      </ons-col>
+      <ons-col width="100px" style="text-align:center; color:#0000ff; font-size:10pt;">
+        時間
+      </ons-col>
+    </ons-row>
+  </div>
+
+  <ons-row>
+    <ons-col width="170px">
+      <ons-button modifier="cta" class="botan" ng-click="DepartureDialog()">　　出　　発　　</ons-button>
+    </ons-col>
+    <ons-col width="100px">
+      <div class="kisai" id="Departure"><br /><center>{{targetDeparture}}</center></div>
+    </ons-col>
+  </ons-row>
+  <ons-row>
+    <ons-col width="170px">
+      <ons-button modifier="cta" class="botan" ng-click="ArrivalDialog()">　　到　　着　　</ons-button>
+    </ons-col>
+    <ons-col width="100px">
+      <div class="kisai"><br /><center>{{targetArrival}}</center></div>
+    </ons-col>
+  </ons-row>
+  <ons-row>
+    <ons-col width="170px">
+      <ons-button modifier="cta" class="botan" ng-click="StartingDialog()">　　開　　始　　</ons-button>
+    </ons-col>
+    <ons-col width="100px">
+      <div class="kisai"><br /><center>{{targetStarting}}</center></div>
+    </ons-col>
+  </ons-row>
+  <ons-row>
+    <ons-col width="170px">
+      <ons-button modifier="cta" class="botan" ng-click="EndDialog()">　　終　　了　　</ons-button>
+    </ons-col>
+    <ons-col width="100px">
+      <div class="kisai"><br /><center>{{targetEnd}}</center></div>
+    </ons-col>
+  </ons-row>
+<br />
+<div id="sagyo-select">
+ログイン者と同じグループに登録されている方にも同時に<br />
+出勤簿（タイムチケット）データの作成を行いますか？<br />
+</div>
+<!-- switchClicked()はスイッチのタップ時に呼び出される -->
+  <div style="width: 120px;"><ons-switch var="mySwitch" ng-click="switchClicked()"></ons-switch><style="font-size:14px;">{{selectEnv}}</style></div>
+
+</ons-page>

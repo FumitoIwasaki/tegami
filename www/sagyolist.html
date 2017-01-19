@@ -1,0 +1,76 @@
+<ons-page ng-controller="SubController1">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      作業時間報告
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div id="view-monthly-header">
+    <div style="font-size:8pt; margin-top:4px;">
+      {{targetDate.getFullYear()}} 年 {{targetDate.getMonth()+1}} 月 {{targetDate.getDate()}} 日
+    </div>
+    <div style="width:100%;">
+      <ons-row>
+        <ons-col width="68px" style="text-align:center; font-size:8pt;">
+          元工番
+        </ons-col>
+        <ons-col width="136px" style="text-align:center; font-size:8pt;">
+          現場名
+        </ons-col>
+        <ons-col width="96px" style="text-align:center; font-size:8pt;">
+          動静
+        </ons-col>
+      </ons-row>
+    </div>
+  </div>
+
+  <ons-scroller id="view-monthly-scroller">
+    <ons-list>
+      <ons-list-item modifier="chevron" ng-repeat="genba in genbas" ng-click="dayItemSelect($index);">
+        <ons-row>
+          <ons-col width="68px">
+            <span style="font-size:0pt">{{genba.YTANTO}}</span><span style="font-size:10pt">{{genba.KOBAN}}</span><span style="font-size:6pt">({{genba.KAISU}})</span>
+          </ons-col>
+          <ons-col width="136px">
+            <span style="font-size:10pt">{{genba.GRYAKUSHO}}</span>
+          </ons-col>
+          <ons-col width="96px">
+            <center>
+            <span style="color:#ff0000; font-size:10pt">{{genba.DOUSEI}}</span>
+            </center>
+          </ons-col>
+        </ons-row>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+
+  <ons-bottom-toolbar style="height: 50px;">
+    <div class="bottom-bar__line-height" style="text-align: left; float:left;">
+      <ons-toolbar-button
+        modifier="outline"
+        style="margin-left: 20px;"
+        ng-click="addDays(-1);">
+        前日
+      </ons-toolbar-button>
+    </div>
+    <div class="bottom-bar__line-height" style="text-align: right; float:right;">
+      <ons-toolbar-button
+        modifier="outline"
+        style="margin-right: 20px;"
+        ng-click="addDays(0);">
+        本日
+      </ons-toolbar-button>
+    </div>
+    <div style="clear:both;"></div>
+  </ons-bottom-toolbar>
+
+</ons-page>
+

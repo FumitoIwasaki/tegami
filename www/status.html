@@ -1,0 +1,43 @@
+<ons-page ng-controller="SubController14">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      ステータス
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div class="kisai">ステータスを登録して下さい。<br /></div>
+  <ons-scroller id="view-monthly-scroller">
+    <ons-list>
+      <ons-list-item modifier="chevron" ng-click="selectStatus('1')">
+        <center><span style="color:#0000ff">{{targetStatus1}}</span> 事務所</center>
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="selectStatus('2')">
+        <center><span style="color:#0000ff">{{targetStatus2}}</span> 点検中</center>
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="selectStatus('3')">
+        <center><span style="color:#0000ff">{{targetStatus3}}</span> 修理中</center>
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="selectStatus('4')">
+        <center><span style="color:#0000ff">{{targetStatus4}}</span> 移動中</center>
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="selectStatus('5')">
+        <center><span style="color:#0000ff">{{targetStatus5}}</span> 休憩中</center>
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="selectStatus('6')">
+        <center><span style="color:#0000ff">{{targetStatus6}}</span> 帰社中</center>
+      </ons-list-item>
+      <ons-list-item modifier="chevron" ng-click="selectStatus('7')">
+        <center><span style="color:#0000ff">{{targetStatus7}}</span> その他</center>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+
+</ons-page>

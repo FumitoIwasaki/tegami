@@ -1,0 +1,195 @@
+<style type="text/css">
+.col {
+  border: 1px solid #ccc;
+
+}
+
+
+</style>
+
+
+<ons-page ng-controller="SubController_Main_Search_detail">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      ﾌﾟﾛｼﾞｪｸﾄ詳細
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox-back-y">
+        <br />
+        {{kojinc}}:{{simei}}
+        <br />
+        {{my_dept_code}}:{{my_dept_code_j}}
+        <br />
+        {{my_tensyo_cd}}:{{my_tensyo_name}} 
+      </div>
+    </div>
+  </ons-toolbar>
+
+    
+
+    <br />
+    <b style="font-size:16px">▼プロジェクト情報</b>
+　　<table width="100%" border="1px" style='border-collapse:collapse; table-layout:fixed; font-size:16px;'> 
+　　    <tr>
+　　		<th width="100px" bgcolor='#F5F5F5'>プロジェクト</th>
+　　        <td align="left">[{{disp_PROJECT_NO}}]<br />{{disp_PROJECT_MEI_J}}</td>
+　　	</tr>
+　　    <tr>
+　　    	<th bgcolor='#F5F5F5'>現場都道府県</th>
+　　        <td align="left">[{{disp_GENBA_PREF_CD}}]{{disp_GENBA_PREF_MEI}}</td>
+　　	</tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>建物名</th>
+　　        <td align="left">{{disp_TATEMONO_P}}</td>
+　　	</tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>住所</th>
+　　        <td align="left">(〒{{disp_GENBA_YUBIN_BANGO}})<br />{{disp_JYUSYO}}</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>施主</th>
+　　        <td align="left">{{disp_SESHU_MEI}}</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>設計監理</th>
+　　        <td align="left">{{disp_SEKKEI_KANRI_MEI}}</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>建築施工</th>
+　　        <td align="left">{{disp_KENCHIKU_MEI}}</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>請負</th>
+　　        <td align="left">[{{disp_JUCHU_KUBETU}}] {{disp_JUCHU_KUBETU_MEI}}</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>現場労災</th>
+　　        <td align="left">[{{disp_ROSAI}}] {{disp_ROSAI_MEI}}<br />{{disp_ROSAI_SHAMEI}}</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>建物用途</th>
+　　        <td align="left">[{{disp_TATEMONO_YOTO}}] {{disp_TATEMONO_YOTO_MEI}}</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>手数料</th>
+　　        <td align="left">{{disp_TESUU_KIN_MEI}}: {{disp_TESUU_KIN | currency : '¥' : 0 }}<br />支払先: {{disp_TESUU_PAY_SAKI}}</td>
+　　    </tr>
+        <tr>
+　　        <th bgcolor='#F5F5F5'>作図メーカー</th>
+　　        <td align="left">開発中</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>保守常駐<br />原価算入</th>
+　　        <td align="left">開発中</td>
+　　    </tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>販売申請決裁No.</th>
+　　        <td align="left">{{disp_KESSAI_NO}}</td>
+　　    </tr>
+　　    
+　　</table>
+
+    <br />
+    <b style="font-size:16px">▼店所・担当</b>
+　　<table width="100%" border="1px" style='border-collapse:collapse; table-layout:fixed; font-size:16px;'> 
+　　    <tr>
+　　    	<th width="100px" bgcolor='#F5F5F5'>受注計上店所<br />(母店)</th>
+　　        <td align="left">[{{disp_JUCHU_KEIJYO_TENSYO}}]<br />{{disp_JUCHU_KEIJYO_TENSYO_NAME}}</td>
+　　	</tr>
+　　    <tr>
+　　    	<th bgcolor='#F5F5F5'>受注店所</th>
+　　        <td align="left">[{{disp_JUCHU_TENSYO}}]{{disp_JUCHU_TENSYO_NAME}}</td>
+　　	</tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>担当者</th>
+　　        <td align="left">開発中[{{disp_TANTO}}]{{disp_TANTO_NAME}}</td>
+　　	</tr>
+　　    <tr>
+　　        <th bgcolor='#F5F5F5'>現場店所</th>
+　　        <td align="left">[{{disp_GENBA_TENSYO}}]{{disp_GENBA_TENSYO_NAME}}</td>
+　　	</tr>
+        <tr>
+　　        <th bgcolor='#F5F5F5'>初回割当店所</th>
+　　        <td align="left">開発中{{disp_WARIATE}}</td>
+　　    </tr>
+　　    
+　　</table>
+    
+    
+    
+    
+    
+    
+    
+
+  <!--</div>-->
+  
+
+
+  <!--<ons-scroller id="view-monthly-scroller">
+    <ons-list>-->
+    
+    <!--    
+   <div ng-repeat="genba in genbas" ng-click="dayItemSelect($index);">
+        <ons-row style="font-size:12px">
+            <ons-col width="30%">
+                {{genba.PROJECT_MEI_J}}
+            </ons-col>
+            <ons-col width="55px" >
+                <a href='#' class='c_sinsei_no'>
+                    004277
+                </a>
+            </ons-col>
+            <ons-col >
+                {{genba.PROJECT_MEI_J}}
+            </ons-col>
+        </ons-row>  
+    </div>
+    -->
+    
+    <!--
+    <ons-row style="font-size:12px;height: 50px; text-align:center; ">
+        <ons-col class="head" width="30%">状態</ons-col>
+        <ons-col class="head" width="55px" >申請No</ons-col>
+        <ons-col class="head" >プロジェクト</ons-col>
+    </ons-row>    
+    <ons-row style="font-size:12px">
+        <ons-col width="30%">
+            作成<br>(チェック依頼)
+        </ons-col>
+        <ons-col width="55px" >
+            <a href='#' class='c_sinsei_no'>
+                004277
+            </a>
+        </ons-col>
+        <ons-col >
+            (仮称)大阪市天王寺区上汐4丁目計画gagagagdga
+        </ons-col>
+    </ons-row>
+    -->
+
+<!--
+  <ons-bottom-toolbar style="height: 50px;">
+    <div class="bottom-bar__line-height" style="text-align: left; float:left;">
+      <ons-toolbar-button
+        modifier="outline"
+        style="margin-left: 20px;"
+        ng-click="addDays(-1);">
+        前日
+      </ons-toolbar-button>
+    </div>
+    <div class="bottom-bar__line-height" style="text-align: right; float:right;">
+      <ons-toolbar-button
+        modifier="outline"
+        style="margin-right: 20px;"
+        ng-click="addDays(0);">
+        本日
+      </ons-toolbar-button>
+    </div>
+    <div style="clear:both;"></div>
+  </ons-bottom-toolbar>
+  -->
+
+</ons-page>
+

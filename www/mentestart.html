@@ -1,0 +1,32 @@
+<style type="text/css">
+.button--black {
+    width: 80%;
+}
+</style>
+<ons-page ng-controller="SubController5">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      点検開始報告
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div class="kisai">状態を選択して下さい。<br /></div>
+  <br />
+
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="menstartDialog('1')">点検実施を開始</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" width="80%" ng-click="menstartDialog('2')">点検実施不可</ons-button>
+  </div>
+    
+</ons-page>

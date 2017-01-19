@@ -1,0 +1,94 @@
+<style type="text/css">
+.button--black {
+    width: 80%;
+}
+</style>
+<ons-page ng-controller="SubController11">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      広域災害状況報告:ESC
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div class="kisai">状態を選択して下さい<br /></div>
+  <br />
+
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('10')">トラスの位置ずれ</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('11')">トラス本体の落下</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('12')">トラスの変形</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('20')">欄干(ｶﾞﾗｽ,ﾊﾟﾈﾙ)の破損,<br />脱落,位置ずれ</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('21')">欄干照明の落下</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('22')">移動手すり用ﾚｰﾙの<br />曲がり,破損</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('23')">ﾃﾞｯｷﾎﾞｰﾄﾞ,ｽｶｰﾄｶﾞｰﾄﾞの<br />曲がり,破損</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('30')">ｽﾃｯﾌﾟの破損</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('31')">ﾗﾝﾃﾞｨﾝｸﾞﾌﾟﾚｰﾄの破損</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('40')">制御盤の移動,落下</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('41')">駆動機の移動,落下</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('42')">ﾁｪｰﾝ類の切断,破損</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('50')">冠水,浸水または津波に<br />よる被害</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('60')">その他外部要因による<br />損傷</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('61')">外装板,外装照明の<br />外れ,脱落</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('62')">利用者に対する安全対策<br />(三角部ｶﾞｰﾄﾞ等)の脱落</ons-button>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="disescDialog3('70')">その他</ons-button>
+  </div>
+
+</ons-page>
+
+

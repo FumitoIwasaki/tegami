@@ -1,0 +1,30 @@
+<ons-page id="disindex">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      広域災害状況報告
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item modifier="chevron" onclick="app.navi.pushPage('groupinput.html', { animation : 'slide' } )">
+      グループ登録：<span id="groupdisp"></span>
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="app.navi.pushPage('mentestart.html', { animation : 'slide' } )">
+      点検開始報告
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="app.navi.pushPage('disevinput.html', { animation : 'slide' } )">
+      広域災害状況報告：EV
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="app.navi.pushPage('disescinput.html', { animation : 'slide' } )">
+      広域災害状況報告：ESC
+    </ons-list-item>
+  </ons-list>
+</ons-page>

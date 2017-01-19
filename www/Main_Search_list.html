@@ -1,0 +1,141 @@
+<style type="text/css">
+.col {
+  border: 0px solid #ccc;
+  overflow: visible;
+  }
+</style>
+
+<!--***********************************************************-->
+<!--画面上部に常に設置するバー-->
+<!--***********************************************************-->
+<ons-page ng-controller="SubController_Main_Search_list">
+  <ons-toolbar fixed-style style="background-color:#efefef;">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      検索結果ﾘｽﾄ
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox-back-y">
+        <br />
+        {{kojinc}}:{{simei}}
+        <br />
+        {{my_dept_code}}:{{my_dept_code_j}}
+        <br />
+        {{my_tensyo_cd}}:{{my_tensyo_name}} 
+      </div>
+    </div>
+  </ons-toolbar>
+
+<!--***********************************************************-->
+<!--検索結果リスト-->
+<!--***********************************************************-->
+  <!--これを結果リストの上に移動させると項目を固定して下スクロールできる-->
+  <!--しかし結果リストだけ横するロールすると、項目が動かない。（だだし項目を横スクロールすると全体が動く-->
+  <div id="view-monthly-header"> 
+  
+  
+<!--項目名-->
+    <ons-list style="width:800px;">
+      <ons-row>
+        <div style="font-size:10pt;">
+          全{{genbas.length}}件(1ページに{{len}}件を表示)
+        </div> 
+      </ons-row>
+      <ons-row style="height: 30px;">
+        <ons-col width="140px" style="text-align:center; vertical-align:middle; font-size:12pt;">
+          <b>ﾌﾟﾛｼﾞｪｸﾄ名</b>
+        </ons-col>
+        <ons-col width="50px" style="text-align:center; font-size:12pt;">
+          <b>工番</b>
+        </ons-col>
+        <ons-col width="90px" style="text-align:center; font-size:12pt;">
+          <b>契約金</b>
+        </ons-col>
+        <ons-col width="85px" style="text-align:center; font-size:12pt;">
+          <b>契約納期</b>
+        </ons-col>
+      </ons-row>
+    </ons-list>
+    
+<!--結果リスト-->
+   <ons-list style="width:800px" 
+             ng-repeat="genba in genbas | limitTo: len: start" 
+             ng-class-even="'row_class1'" 
+             ng-click="dayItemSelect($index + start);"
+             height="43px">
+        <!--20161219 始めons-rowとons-colだけでやっていたが、一度詳細画面を開いた後、画面上部の「戻る」で
+        戻った後再度リストをクリックすると、ng-clickが動作しない現象があったのでのでtableにした-->
+        <ons-row style="height: 43px;" align="center">
+            <ons-col>
+                <table style="font-size:10pt;">
+                    <tr>
+                	  <td width="140px">
+                          {{genba.PROJECT_MEI_J}}
+                      </td>
+                      <td width="50px">
+                          {{genba.TKOBAN}}
+                      </td>
+                      <td width="80px" style="text-align:right;">
+                          {{genba.KEIYAKU_KIN | number}}
+                      </td>
+                      <td width="70px" style="text-align:center;">
+                          {{genba.KEIYAKU_NOKI}}
+                      </td>
+                	</tr>
+                </table>
+            </ons-col>
+        </ons-row>
+
+        <!--
+        <ons-row style="height: 40px;">
+          <ons-col width="140px">
+            <span style="font-size:10pt;" width="130px">{{genba.PROJECT_MEI_J}}</span>
+          </ons-col>
+          <ons-col width="50px">
+            <span style="font-size:10pt">{{genba.TKOBAN}}</span>
+          </ons-col>
+          <ons-col width="90px" style="text-align:right;">
+              
+              <span style="font-size:10pt">
+                {{genba.KEIYAKU_KIN | number}}
+              </span>
+          </ons-col>
+          <ons-col width="85px" style="text-align:center;">
+            <span style="font-size:10pt">{{genba.KEIYAKU_NOKI}}</span>
+          </ons-col>
+        </ons-row>
+        -->
+        
+    </ons-list>
+  </ons-scroller>
+  
+<!--***********************************************************-->
+<!--画面下部に常に設置するバー-->
+<!--***********************************************************-->
+  <ons-bottom-toolbar style="height: 50px;">
+    <div class="bottom-bar__line-height" style="text-align: left; float:left;">
+      
+      <ons-toolbar-button
+        modifier="outline"
+        style="margin-left: 20px;"
+        ng-click="pager('back');">
+        前ページ
+      </ons-toolbar-button>
+    </div>
+    <div class="bottom-bar__line-height" style="text-align: right; float:right;">
+      <ons-toolbar-button
+        modifier="outline"
+        style="margin-right: 20px;"
+        ng-click="pager('next');">
+        次ページ
+      </ons-toolbar-button>
+    </div>
+    <div style="clear:both;"></div>
+  </ons-bottom-toolbar>
+  
+  
+  
+  
+
+</ons-page>
+

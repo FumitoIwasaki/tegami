@@ -1,0 +1,51 @@
+<ons-page ng-controller="SubController6">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      広域災害状況報告:EV
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div class="kisai">登録番号を入力して下さい。<br /></div>
+  <br />
+
+  <form name="SendData3">
+  登録番号：<input type="text" name="torokuno" value=""><br />
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="torokuInput('1')">次へ</ons-button>
+  </div>
+  </form>
+
+  <div id="escTitle" style="background-color:#cacaca">
+  </div>
+
+  <ons-scroller id="view-sec-scroller">
+    <ons-list>
+      <ons-list-item modifier="chevron" ng-repeat="negenba in negenbas" ng-click="evItemSelect($index);">
+        <span style="font-size:10pt">{{negenba.KOBAN}} : {{negenba.TOROKU}}</span><br />
+        <span style="font-size:10pt">{{negenba.GENBAMEI}}</span>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+
+  <ons-bottom-toolbar style="height: 50px;">
+    <div class="bottom-bar__line-height" style="text-align: right; float:right;">
+      <ons-toolbar-button
+        modifier="outline"
+        style="margin-right: 20px;"
+        ng-click="sarchJob2();">
+        周辺の現場検索
+      </ons-toolbar-button>
+    </div>
+    <div style="clear:both;"></div>
+  </ons-bottom-toolbar>
+
+</ons-page>

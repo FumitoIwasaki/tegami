@@ -1,0 +1,27 @@
+<ons-page ng-controller="SubController4">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      グループ登録
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div class="kisai">グループ番号を入力して下さい。<br /></div>
+  <br />
+
+  <form name="SendData">
+  グループ番号：<input type="text" name="groupinp" value=""><br />
+  <br />
+  <div style="text-align: center">
+    <ons-button modifier="black" class="botan" ng-click="groupDialog()">登録</ons-button>
+  </div>
+  </form>
+    
+</ons-page>

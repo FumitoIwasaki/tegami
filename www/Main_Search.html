@@ -1,0 +1,212 @@
+<style type="text/css">
+.col {
+  border: 0px solid #ccc;
+  overflow: visible;
+  }
+</style>
+
+<ons-page ng-controller="SubController_Main_Search">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+        メイン情報検索
+    </div>
+    
+    <div class="right">
+      <div class="toolbar-namebox-back-y">
+        <br />
+        {{kojinc}}:{{simei}}
+        <br />
+        {{my_dept_code}}:{{my_dept_code_j}}
+        <br />
+        {{my_tensyo_cd}}:{{my_tensyo_name}} 
+      </div>
+    </div>
+  </ons-toolbar>
+<!--
+  <div id="view-monthly-header">
+    
+    <div style="font-size:8pt; margin-top:4px;">
+      {{targetDate.getFullYear()}} 年 {{targetDate.getMonth()+1}} 月 {{targetDate.getDate()}} 日
+    </div>
+    -->
+
+    <!--<div style="width:100%;">-->
+    
+    <form name="Main_Search">
+    
+    <ons-list >
+      <table height="50px">
+        <tr>
+          <td width="100px">
+            ﾌﾟﾛｼﾞｪｸﾄNo
+          </td>
+          <td valign="middle" style="font-size:10pt;color:#848484">
+            <input type="email"                
+                   class="text-input"
+                   style="ime-mode: disabled"
+                   size="12" 
+                   name="tProject_No" 
+                   placeholder="8文字以上入力"
+                   value="">
+            <span style="vertical-align:middle;">先頭一致</span>
+          </td>
+        </tr>
+      </table> 
+    </ons-list>
+    
+    
+    <ons-list >
+      <table height="50">
+        <tr>
+          <td width="100px">
+            現場名
+          </td>
+          <td valign="middle" style="font-size:10pt;color:#848484">
+            <input type="text" 
+                   size="12" 
+                   class="text-input"  
+                   name="tProject_mei_j" 
+                   value="">
+
+            先頭一致
+          </td>
+        </tr>
+      </table> 
+    </ons-list>     
+     
+    <ons-list >
+      <table height="50">
+        <tr>
+          <td width="100px">
+            現場住所
+          </td>
+          <td valign="middle" style="font-size:10pt;color:#848484">
+            <input type="text" 
+                   size="12" 
+                   class="text-input"  
+                   name="tJyusyo" 
+                   value="">
+
+            部分一致
+          </td>
+        </tr>
+      </table> 
+    </ons-list> 
+    
+    <ons-list >
+      <table height="50">
+        <tr>
+          <td width="100px">
+            工番
+          </td>
+          <td valign="middle" style="font-size:10pt;color:#848484">
+            <input type="email" 
+                   size="12" 
+                   class="text-input" 
+                   style="text-transform: uppercase;"
+                   name="tTkoban" 
+                   placeholder="5文字以上入力"
+                   value="">
+
+            先頭一致
+            <br />
+            ※自動で大文字になります。
+          </td>
+        </tr>
+      </table> 
+    </ons-list>  
+      
+      
+    <ons-list >
+      <table height="50">
+        <tr>
+          <td width="100px">
+            工名
+          </td>
+          <td valign="middle" style="font-size:10pt;color:#848484">
+            <input type="text" 
+                   size="12" 
+                   class="text-input"  
+                   name="tKomei" 
+                   value="">
+
+            部分一致
+          </td>
+        </tr>
+      </table> 
+    </ons-list> 
+
+
+    <ons-list >
+      <table height="50">
+        <tr>
+          <td width="100px">
+            機種
+          </td>
+          <td valign="middle" style="font-size:10pt;color:#848484">
+            <input type="email" 
+                   size="12" 
+                   class="text-input"  
+                   name="sKisyu" 
+                   value="">
+
+            部分一致
+          </td>
+        </tr>
+      </table> 
+    </ons-list>
+    
+
+      
+      
+    <!--</div>-->
+  <!--</div>-->
+
+<!--
+  <ons-scroller id="view-monthly-scroller">
+    <ons-list>
+      <ons-list-item modifier="chevron" ng-repeat="genba in genbas" ng-click="dayItemSelect($index);">
+        <ons-row>
+          <ons-col width="68px">
+            <span style="font-size:0pt">{{genba.YTANTO}}</span><span style="font-size:10pt">{{genba.KOBAN}}</span><span style="font-size:6pt">({{genba.KAISU}})</span>
+          </ons-col>
+          <ons-col width="136px">
+            <span style="font-size:10pt">{{genba.GRYAKUSHO}}</span>
+          </ons-col>
+          <ons-col width="96px">
+            <center>
+            <span style="color:#ff0000; font-size:10pt">{{genba.DOUSEI}}</span>
+            </center>
+          </ons-col>
+        </ons-row>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+-->
+
+
+
+
+  <ons-bottom-toolbar>
+    <div style="text-align: center;">
+        <ons-button ng-click="Main_Search_go();">
+          　検　索　
+        </ons-button>
+        　　　
+        <ons-button modifier="outline" ng-click="resetForm();">
+          全てクリア
+        </ons-button>
+        <!--
+        <ons-button ng-click="addDays(-1);">
+          　sample
+        </ons-button>  
+        -->
+    </div>
+  </ons-bottom-toolbar>
+  
+  </form>  
+  
+  
+</ons-page>
+

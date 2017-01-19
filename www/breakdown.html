@@ -1,0 +1,71 @@
+<ons-page ng-controller="SubController12">
+  <ons-toolbar fixed-style style="background-color:#efefef">
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">
+      故障連絡一覧
+    </div>
+    <div class="right">
+      <div class="toolbar-namebox">
+        <br />
+        {{kojinc}}<br />
+        {{simei}}
+      </div>
+    </div>
+  </ons-toolbar>
+
+  <div id="breakdown-header">
+    <div class="kisai">故障リストから現場を選択し、状態を選択して下さい。<br /></div>
+    <br />
+
+    <form name="SendData2">
+    <div style="font-size:11pt;">登録番号：{{targetBuildingno}}</div><div style="font-size:0pt;">{{targetSqno}}</div>
+    <br />
+    <div style="text-align: center">
+      <ons-button modifier="black" class="botan" ng-click="breakdownDialog('2')">現着</ons-button>
+    　　
+      <ons-button modifier="black" class="botan" ng-click="breakdownDialog('1')">完了</ons-button>
+    </div>
+    </form>
+
+    <hr>
+    <div style="width:100%;">
+      <ons-row>
+        <ons-col width="68px" style="font-size:8pt;">
+          登録番号
+        </ons-col>
+        <ons-col width="96px" style="text-align:center; font-size:8pt;">
+          状態
+        </ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="100%" style="font-size:8pt;">
+          現場名
+        </ons-col>
+      </ons-row>
+    </div>
+  </div>
+
+  <ons-scroller id="breakdown-scroller">
+    <ons-list>
+      <ons-list-item modifier="chevron" ng-repeat="bdgenba in bdgenbas" ng-click="genbaItemSelect($index);">
+        <ons-row>
+          <ons-col width="68px">
+            <span style="font-size:0pt">{{bdgenba.SQNO}}</span><span style="font-size:10pt">{{bdgenba.BUILDING_NO}}</span>
+          </ons-col>
+          <ons-col width="96px">
+            <center>
+            <span style="color:#ff0000; font-size:10pt">{{bdgenba.DOUSEI}}</span>
+            </center>
+          </ons-col>
+        </ons-row>
+        <ons-row>
+          <ons-col width="100%">
+            <span style="font-size:10pt">{{bdgenba.GENBAMEI}}</span>
+          </ons-col>
+        </ons-row>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+
+
+</ons-page>

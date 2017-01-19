@@ -1,0 +1,110 @@
+.item {
+  padding: 10px;
+  line-height: 1;
+}
+.item-thum {
+  background-color: #ccc;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+.item-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+.item-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.3;
+  margin: 4px 0 0 0;
+  padding: 0 30px 0 0;
+}
+.item-label {
+  font-size: 12px;
+  color: #999;
+  float: right;
+}
+div#view-monthly-header {
+  height:40px;
+  width: 100%;
+  text-align:center;
+}
+div#sagyo-select {
+  font-size: 10px;
+}
+div.toolbar-namebox {
+  margin-top: 0px;
+  margin-right: 30px;
+  font-size: 10px;
+  line-height: 110%;
+  margin-left: 250%;
+}
+
+div.toolbar-namebox-back-y {
+  margin-top: 0px;
+  margin-right: 1000px;
+  font-size: 10px;
+  line-height: 110%;
+}
+
+.kisai {
+    color:#000000;
+    font-size:14px;
+}
+.genba {
+    color:#0000ff;
+    font-size:10pt;
+}
+ons-scroller#view-monthly-scroller {
+  height: -webkit-calc(100% - 44px);
+  width: 100%;"
+}
+div#loadSpinner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+
+    margin-left: 48% ; /* IE8以下とAndroid4.3以下用フォールバック */
+    margin-left: -webkit-calc(50% - 22px) ;
+    margin-left: calc(50% - 22px) ;
+
+    margin-top: 40%;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    border: 8px solid #3d74ff;
+    border-right-color: transparent;
+    -webkit-animation: myspin 0.5s infinite linear;
+    z-index: 999;
+}
+div#breakdown-header {
+  height:210px;
+  width: 100%;
+}
+ons-scroller#breakdown-scroller {
+  height: -webkit-calc(100% - 210px);
+  width: 100%;"
+}
+ons-scroller#view-sec-scroller {
+  height: -webkit-calc(100% - 170px);
+  width: 100%;"
+}
+.number_c {
+  background-color: #f5f5f5;
+  ime-mode: disabled;
+}
+
+.row_class1 {
+  background-color: #FFFFE0;
+}
+
+.row_class2 {
+  background-color: #fffff;
+}
+
+@-webkit-keyframes myspin {
+    0%   { -webkit-transform: rotate(0deg); opacity: 1; }
+    50%  { -webkit-transform: rotate(180deg); opacity: 0.1; }
+    100% { -webkit-transform: rotate(360deg); opacity: 1; }
+}
